@@ -10,6 +10,7 @@ last2 liste = reverse liste !! 0
 
 {- b) (2 P)
 The builtin library function 'init' removes the last  element of a list. Provide two alternative implementations (name them 'init1' and 'init2'). You may use other library functions but not 'init' itself. 
+Was dazu
 -}
 
 init1 :: [a] -> [a]
