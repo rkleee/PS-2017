@@ -1,0 +1,40 @@
+Write down the type definitions of the following expressions:
+
+a)    (True‚'a',[1,2,3]) :: Num t => (Bool, Char, [t])
+
+
+b)    (['a'],['b'],['b'],['a']) :: ([Char], [Char], [Char], [Char])
+
+
+c)    [[[1,2,3],[5,6,7,8]],[[9,10,11]]] :: Num t => [[[t]]]
+
+
+d)    [[(1,2,3),(5,6,7,8)],[(9,10,11)]] – nicht möglich, die erste Liste der Liste enthält ein 2er- und ein 3-er-Tupel, damit sind nicht alle Elemente diese Liste gleich und es ist keine gültige Listendefinition
+
+---Fehlermeldung
+*Main> let listes = [[(1,2,3),(5,6,7,8)],[(9,10,11)]]
+
+<interactive>:79:24:
+    Couldn't match expected type ‘(t, t1, t2)’
+                with actual type ‘(Integer, Integer, Integer, Integer)’
+    Relevant bindings include
+      listes :: [[(t, t1, t2)]] (bound at <interactive>:79:5)
+    In the expression: (5, 6, 7, 8)
+    In the expression: [(1, 2, 3), (5, 6, 7, 8)]
+    In the expression: [[(1, 2, 3), (5, 6, 7, 8)], [(9, 10, 11)]]
+--- Ende Fehlermeldung
+
+
+e)    "xyz" == "ddd" :: Bool
+
+f)     second xs = head (tail xs)
+Keine Ahnung was ich damit anfangen soll... xs wird wohl eine Liste sein, head gibt ein einzelnes Element zurück, der Datentyp sollte dem Typen der Elemente in der unbekannten Liste entsprechen. 
+Die zuvor geschriebene Funktion gibt den hinteren Wert eines 2er-Tupels zurück. Durch das gleich sollte dann irgendwas geschrieben werden, ich würde es als zweiter Wert des Tuples xs wird mit dem Ausdruck hinter dem Gleichzeichen beschrieben interpretieren. Wenn ich die ganze ausführe, bekomme ich keinen Fehler, verstehe aber nicht so wirklich was es tut.
+
+Wenn ich nach dem Typen frage bekomme ich:
+*Main> :type let second xs = head(tail xs)
+
+<no location info>:
+    not an expression: ‘let second xs = head(tail xs)’
+Was ich schon eher nacahvollziehen kann.
+
